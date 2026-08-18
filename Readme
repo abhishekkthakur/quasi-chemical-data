@@ -60,3 +60,27 @@ The same 20% subset was used for: architecture selection and model evaluation. T
 Reviewer #2 requested comparison against direct inversion. The authors only compare against linear least-squares fitting. This is still a relatively weak benchmark. The paper therefore demonstrates: NN is better than linear regression but not necessarily NN is better than existing thermodynamic inversion methods. This concern is partially addressed but not completely resolved.
 
 The NN is learning a smooth inverse surrogate of the forward model. That is acceptable for the paper’s purpose, but the novelty should not be overstated.
+
+
+
+
+Final address of the comments:
+
+
+
+Response to comment 1:
+We thank the reviewer for this important observation and fully agree that a strict machine learning workflow ideally requires separate training, validation, and independent testing datasets, or alternatively a cross-validation-based model selection strategy.
+In the present study, the available dataset corresponding to the invariant reaction existence domain of the Cu-Ir system was relatively limited. To maximize the amount of data available for model training, the 20% subset was used both for architecture selection and for final performance assessment. We acknowledge that this approach may introduce a degree of optimistic bias in the reported predictive performance.
+To address this concern, we have explicitly stated this limitation in the revised manuscript and clarified that the neural network model is intended primarily as a proof-of-concept framework for demonstrating the feasibility of learning the inverse mapping between invariant reaction characteristics and interaction energy parameters. 
+We appreciate the reviewer's comment, which has helped us clarify the scope and limitations of the current study.
+We can add the following paragraph either in discussion / conclusions / future work section:
+"It should be noted that the neural network architecture was selected using the same 20% hold-out test dataset employed for model evaluation because of the limited size of the available dataset. While this strategy was adopted to maximize the training data, it may lead to optimistic estimates of predictive performance. Future studies will employ (A more robust study employs) separate validation and independent test datasets or cross-validation-based model selection procedures to provide a more rigorous assessment of model generalization."
+Response to comment 2:
+We agree that comparison against a full thermodynamic inversion framework would provide a stronger benchmark. However, the objective of the present work is not to replace established thermodynamic parameter optimization approaches. Rather, the neural network is intended to serve as a computationally efficient inverse surrogate capable of generating physically meaningful initial estimates of interaction parameters. Conventional thermodynamic inversion methods remain the standard route for final parameter optimization and database assessment. A detailed comparison with such methods is beyond the scope of the present proof-of-concept study and will be the subject of future work.
+In response to the reviewer's concern, we have revised the manuscript to moderate the claims regarding novelty and performance. We state that the proposed neural network should be viewed as a complementary tool capable of generating informed initial estimates of interaction energy parameters, which can subsequently be refined using conventional thermodynamic optimization procedures.
+We have additionally expanded the discussion to acknowledge that future studies should compare the proposed framework with more advanced inverse-design and thermodynamic parameter optimization methods to establish its relative advantages and limitations more comprehensively.
+We appreciate the reviewer's suggestion and believe that the revised text now better reflects the intended scope of the work.
+We can add the following in the discussion / conclusion section:
+"The proposed neural-network model should be viewed as an inverse surrogate framework for generating physically reasonable initial estimates of interaction energy parameters rather than as a replacement for established thermodynamic inversion and optimization methodologies. The comparison presented in this work against linear least-squares regression serves primarily as a baseline illustrating the advantages of nonlinear learning. Future investigations should include comparisons with more sophisticated inversion and thermodynamic optimization approaches to further assess the strengths and limitations of neural-network-based parameter prediction."
+
+
