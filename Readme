@@ -1,1 +1,54 @@
 The Excel sheet contains 10,000 data points generated using the regular solution and quasi-chemical thermodynamic model. 
+
+Abstract:
+For the chosen thermodynamic model, the phase diagram depends on the thermodynamic parameters of the
+elements and the selected interaction energy parameters. A systematic variation of the energy parameters can reveal
+the nature of the phase diagrams obtained under the given conditions. In the present study, the quasi-chemical
+solution model, which accounts for short range order parameter up to the pair cluster, is adopted for the solid
+phase, while the regular solution model is used for the liquid phase. Using these solution models, the boundaries
+of the interaction energy parameters that result in various invariant reactions are calculated for the model system.
+The regions bounded by these boundaries are referred to as domains. This methodology is applied to the Cu-Ir
+system. The invariant reaction data obtained from these domains are used to train an artificial neural network
+model to predict the interaction energy parameters. The phase diagram obtained from the predicted values shows a
+good agreement with the experimental data. Thus, this methodology provides intelligent initial interaction energy
+parameters for the optimization of the experimental data.
+
+Conclusions:
+Using the quasi-chemical solution approach the solid phase is modelled, while the high temperature liquid
+phase is modelled using the regular solution model. The invariant reactions in the phase diagram are treated as
+the interaction of the miscibility gap of one of the phases with the solidus, liquidus, or iso-G boundaries. Using
+the appropriate thermodynamic conditions for the chosen solution models, the loci of energies corresponding to
+congruent minimum, congruent maximum, eutectic, peritectic, monotectic, and syntectic reactions are determined
+for a prototype binary system. The isothermal contours of these invariant reactions, illustrating the behaviour of
+the system within their respective domains are also presented.
+The developed methodology is applied to the Cu-Ir binary system, which exhibits a peritectic reaction with a
+miscibility gap in the solid phase at low temperatures. The existence domain boundaries are calculated for this
+system, and the invariant reaction data corresponding to the peritectic domain are generated. These data are used
+to train a supervised artificial neural network model to predict the energy parameters of both solid and liquid phases.
+In the model, temperature (T) and compositions (xα
+Ir, xβ
+Ir) served as inputs, while energy parameters (wα, wβ) are
+predicted as outputs. The neural network optimization reveals that a network architecture with two hidden layers
+is sufficient to capture the complex correlations between inputs and outputs. The phase diagram calculated using
+the neural network predicted energy parameters shows a good agreement with the experimentally reported phase
+diagram for the Cu-Ir system, with some deviations in solubility on the Ir-rich side. These deviations are attributed
+to the limited number of energy parameters in the selected solution model. Thus, the proposed methodology can
+be used to get a reliable set of initial values for the optimization of experimental or theoretical phase diagram
+data as well as thermodynamic data. 
+Extension of the methodology to other alloy systems would require
+retraining with appropriate data such as elemental and thermodynamic descriptors to improve model transferability
+and enable the development of more generalized predictive frameworks.
+It should be noted that the linear least-squares model employed for comparison serves as a simple
+reference baseline intended to highlight the benefits of nonlinear learning.
+Future work may
+consider comparisons with more advanced inversion and regression methodologies to further assess the relative
+strengths and limitations of neural-network-based approaches. It also includes extending the developed methodology
+for existence domain calculations for more complex solution models that provide short range order parameters
+and are computationally intensive. Furthermore, the supervised neural network model for predicting the energy
+parameters can be integrated with multiscale computational frameworks, including density functional theory (DFT),
+CALPHAD, and phase-field modeling for microstructure evolution and property prediction (Kumar Thakur et al.,
+2023; Morino et al., 2025; Shen, 2025). Advanced architectures such as graph neural networks and long short
+term memory (LSTM) networks can also be explored to enhance predictive accuracy and enable inverse design of
+alloy compositions (Qin et al., 2023; Razavi and Moelans, 2026). These extensions are expected to broaden the
+applicability of the approach presented in this work to complex materials systems and accelerate data-driven alloy
+development.
