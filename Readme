@@ -52,3 +52,11 @@ term memory (LSTM) networks can also be explored to enhance predictive accuracy 
 alloy compositions (Qin et al., 2023; Razavi and Moelans, 2026). These extensions are expected to broaden the
 applicability of the approach presented in this work to complex materials systems and accelerate data-driven alloy
 development.
+
+
+Comments:
+The same 20% subset was used for: architecture selection and model evaluation. The authors now openly admit this. That honesty is appreciated, but scientifically the issue remains. A proper workflow would require train, validation, independent test or cross-validation.
+
+Reviewer #2 requested comparison against direct inversion. The authors only compare against linear least-squares fitting. This is still a relatively weak benchmark. The paper therefore demonstrates: NN is better than linear regression but not necessarily NN is better than existing thermodynamic inversion methods. This concern is partially addressed but not completely resolved.
+
+The NN is learning a smooth inverse surrogate of the forward model. That is acceptable for the paper’s purpose, but the novelty should not be overstated.
